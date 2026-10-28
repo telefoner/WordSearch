@@ -32,13 +32,16 @@ public class HelloController {
 
     @FXML
     public void onTxtInput(ActionEvent actionEvent) {
+
     }
 
     @FXML
     public void onBtnSrch(ActionEvent actionEvent) {
+        doSearch();
     }
 
     FXML
     public void onBtnClear(ActionEvent actionEvent) {
+        clearHistory();
     }
 }
