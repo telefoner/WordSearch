@@ -1,10 +1,12 @@
 package dk.mozafaka.wordsearch;
 
+import bll.Logic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class HelloController {
@@ -31,17 +33,18 @@ public class HelloController {
     public ListView lstAllWrds;
 
     @FXML
-    public void onTxtInput(ActionEvent actionEvent) {
-
-    }
+    public TextField txtWrdInput;
 
     @FXML
     public void onBtnSrch(ActionEvent actionEvent) {
-        doSearch();
+        Logic logic = new Logic();
+        String buffer = txtWrdInput.getText();
+        logic.doSearch(buffer);
     }
 
-    FXML
+    @FXML
     public void onBtnClear(ActionEvent actionEvent) {
-        clearHistory();
+        //logic.clearHistory();
     }
+
 }

@@ -12,7 +12,7 @@
    <children>
       <HBox prefHeight="99.0" prefWidth="550.0">
          <children>
-            <TextField fx:id="txtWrdInput" onAction="#onTxtInput" prefHeight="26.0" prefWidth="392.0">
+            <TextField fx:id="txtWrdInput" prefHeight="26.0" prefWidth="392.0">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
