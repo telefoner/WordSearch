@@ -40,6 +40,12 @@ public class HelloController {
         Logic logic = new Logic();
         String buffer = txtWrdInput.getText();
         logic.doSearch(buffer);
+        if (logic.doSearch(buffer)){
+            txtSrchRslt.setText("Word " + buffer + " is found!");
+        }
+        else{
+            txtSrchRslt.setText("Word " + buffer + " is not found.");
+        }
     }
 
     @FXML

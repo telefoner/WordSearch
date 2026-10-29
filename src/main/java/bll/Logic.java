@@ -7,10 +7,9 @@ import dk.mozafaka.wordsearch.HelloController;
 
 public class Logic {
 
-    public void doSearch(String str){
+    public boolean doSearch(String str){
         FileGrabber fs = new FileGrabber();
-        fs.fileSearch(str);
-        //if (buffer == fs.fileSearch(buffer))
+        return fs.fileSearch(str);
     }
 
 }

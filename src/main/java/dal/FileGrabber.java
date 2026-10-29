@@ -8,18 +8,20 @@ import java.nio.charset.StandardCharsets;
 
 public class FileGrabber {
 
-    public void fileSearch(String str){
+    public boolean fileSearch(String str){
         try {
             BufferedReader file = new BufferedReader(new InputStreamReader(FileGrabber.class.getResourceAsStream("/words.txt"), StandardCharsets.UTF_8));
             String line;
             while ((line = file.readLine()) != null){
-                System.out.println(line);
+                if (line.equalsIgnoreCase(str)){
+                    return true;
+                }
             }
-            file.close();
         }
         catch(IOException e){
             System.out.println("An error occured");
             e.printStackTrace();
         }
+        return false;
     }
 }
