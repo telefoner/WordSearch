@@ -1,15 +1,19 @@
 package dk.mozafaka.wordsearch;
 
 import bll.Logic;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import java.util.List;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class HelloController {
+
+    Logic logic = new Logic();
 
     @FXML
     public ListView lstWrdsA;
@@ -30,16 +34,14 @@ public class HelloController {
     public Text txtSrchRslt;
 
     @FXML
-    public ListView lstAllWrds;
+    public ListView<String> lstAllWrds;
 
     @FXML
     public TextField txtWrdInput;
 
     @FXML
     public void onBtnSrch(ActionEvent actionEvent) {
-        Logic logic = new Logic();
         String buffer = txtWrdInput.getText();
-        logic.doSearch(buffer);
         if (logic.doSearch(buffer)){
             txtSrchRslt.setText("Word " + buffer + " is found!");
         }
@@ -51,6 +53,11 @@ public class HelloController {
     @FXML
     public void onBtnClear(ActionEvent actionEvent) {
         //logic.clearHistory();
+    }
+
+    public void initialize(){
+        List<String> words = logic.getAllWords();
+        lstAllWrds.setItems(FXCollections.observableArrayList(words));
     }
 
 }

@@ -1,15 +1,17 @@
 package bll;
 
-import java.io.File;
-
 import dal.FileGrabber;
-import dk.mozafaka.wordsearch.HelloController;
+import java.util.List;
 
 public class Logic {
+    FileGrabber fs = new FileGrabber();
 
     public boolean doSearch(String str){
-        FileGrabber fs = new FileGrabber();
         return fs.fileSearch(str);
+    }
+
+    public List<String> getAllWords(){
+        return fs.readAll();
     }
 
 }
