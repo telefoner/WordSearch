@@ -41,5 +41,22 @@ public class FileGrabber {
             }
             return result;
     }
+
+    public int wordCount() {
+        InputStream stream = FileGrabber.class.getResourceAsStream("/words.txt");
+        int lineCount = 0;
+        try (BufferedReader file = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
+            while (file.readLine() != null) {
+                lineCount++;
+            }
+            return lineCount;
+        }
+        catch(IOException s){
+            System.out.println("An error occured");
+            s.printStackTrace();
+            return -1;
+        }
+
+    }
 }
 

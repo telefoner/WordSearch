@@ -58,6 +58,7 @@ public class HelloController {
     public void initialize(){
         List<String> words = logic.getAllWords();
         lstAllWrds.setItems(FXCollections.observableArrayList(words));
+        txtWrdCount.setText(Integer.toString(logic.getWordCount()));
     }
 
 }

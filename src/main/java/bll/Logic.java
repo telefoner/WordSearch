@@ -14,4 +14,8 @@ public class Logic {
         return fs.readAll();
     }
 
+    public int getWordCount() {
+        return fs.wordCount();
+    }
+
 }
