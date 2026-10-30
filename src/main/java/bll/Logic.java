@@ -18,4 +18,11 @@ public class Logic {
         return fs.wordCount();
     }
 
+    public List<String> getWordsA(){
+        return fs.readA();
+    }
+
+    public List<String> getWordsN(){
+        return fs.readN();
+    }
 }

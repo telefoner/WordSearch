@@ -24,11 +24,25 @@
             </Button>
          </children>
       </HBox>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Words">
-         <VBox.margin>
-            <Insets left="20.0" top="5.0" />
-         </VBox.margin>
-      </Text>
+      <HBox prefHeight="82.0" prefWidth="600.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All words">
+               <HBox.margin>
+                  <Insets left="20.0" top="5.0" />
+               </HBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Words beggining with &quot;A&quot;">
+               <HBox.margin>
+                  <Insets left="186.0" top="5.0" />
+               </HBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Words beggining with &quot;N&quot;">
+               <HBox.margin>
+                  <Insets left="35.0" top="5.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <ListView fx:id="lstAllWrds" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="210.0">

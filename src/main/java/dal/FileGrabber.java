@@ -10,13 +10,13 @@ import java.util.List;
 
 public class FileGrabber {
 
-    private BufferedReader getReader() {
+    private BufferedReader getFile() {
         InputStream stream = FileGrabber.class.getResourceAsStream("/words.txt");
         return new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
     }
 
     public boolean fileSearch(String str){
-        try(BufferedReader file = getReader()) {
+        try(BufferedReader file = getFile()) {
             String line;
             while ((line = file.readLine()) != null){
                 if (line.equalsIgnoreCase(str)){
@@ -32,7 +32,7 @@ public class FileGrabber {
     }
     public List<String> readAll(){
         List<String> result = new ArrayList<>();
-        try (BufferedReader file = getReader()) {
+        try (BufferedReader file = getFile()) {
             String line;
             while ((line = file.readLine()) != null) {
                 result.add(line.trim());
@@ -47,7 +47,7 @@ public class FileGrabber {
 
     public int wordCount() {
         int lineCount = 0;
-        try (BufferedReader file = getReader()) {
+        try (BufferedReader file = getFile()) {
             while (file.readLine() != null) {
                 lineCount++;
             }
@@ -59,6 +59,40 @@ public class FileGrabber {
             return -1;
         }
 
+    }
+
+    public List<String> readA() {
+        List<String> result = new ArrayList<>();
+        try (BufferedReader file = getFile()) {
+            String line;
+            while ((line = file.readLine()) != null) {
+                if (line.startsWith("a")) {
+                    result.add(line);
+                }
+            }
+        }
+        catch (IOException error) {
+            System.out.println("An error occured");
+            error.printStackTrace();
+        }
+        return result;
+    }
+
+    public List<String> readN() {
+        List<String> result = new ArrayList<>();
+        try (BufferedReader file = getFile()) {
+            String line;
+            while ((line = file.readLine()) != null) {
+                if (line.startsWith("n")) {
+                    result.add(line);
+                }
+            }
+        }
+        catch (IOException error) {
+            System.out.println("An error occured");
+            error.printStackTrace();
+        }
+        return result;
     }
 
 }
