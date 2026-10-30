@@ -34,7 +34,7 @@ public class HelloController {
     public Text txtSrchRslt;
 
     @FXML
-    public ListView<String> lstAllWrds;
+    public ListView lstAllWrds;
 
     @FXML
     public TextField txtWrdInput;
@@ -44,10 +44,12 @@ public class HelloController {
         String buffer = txtWrdInput.getText();
         if (logic.doSearch(buffer)){
             txtSrchRslt.setText("Word " + buffer + " is found!");
+
         }
         else{
             txtSrchRslt.setText("Word " + buffer + " is not found.");
         }
+        lstHistory.setItems(FXCollections.observableArrayList(logic.getSearchHistory()));
     }
 
     @FXML
