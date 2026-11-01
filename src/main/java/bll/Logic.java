@@ -17,6 +17,10 @@ public class Logic {
         return found;
     }
 
+    public void clearHistory() {
+        history.clear();
+    }
+
     public List<String> getSearchHistory() {
         return history;
     }

@@ -54,7 +54,8 @@ public class HelloController {
 
     @FXML
     public void onBtnClear(ActionEvent actionEvent) {
-        //logic.clearHistory();
+        logic.clearHistory();
+        lstHistory.setItems(FXCollections.observableArrayList(logic.getSearchHistory()));
     }
 
     public void initialize(){
